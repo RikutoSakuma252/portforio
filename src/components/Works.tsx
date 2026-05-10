@@ -1,0 +1,249 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
+
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  tags: string[];
+  year: string;
+  color: string;
+  image: string;
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "LUXE Commerce",
+    category: "E-Commerce Platform",
+    description:
+      "ラグジュアリーブランド向けECサイト。洗練されたUIと高速なパフォーマンスを両立し、商品の世界観を最大限に引き出すデザインを実現。",
+    tags: ["Next.js", "TypeScript", "Stripe", "Prisma"],
+    year: "2025",
+    color: "#c9a96e",
+    image: "/works/project-1.jpg",
+  },
+  {
+    id: 2,
+    title: "Pulse Dashboard",
+    category: "SaaS Application",
+    description:
+      "リアルタイムデータ分析ダッシュボード。複雑なデータを直感的に可視化し、意思決定を加速するインターフェースを設計・開発。",
+    tags: ["React", "D3.js", "Node.js", "PostgreSQL"],
+    year: "2025",
+    color: "#6ec9b0",
+    image: "/works/project-2.jpg",
+  },
+  {
+    id: 3,
+    title: "FORMA Studio",
+    category: "Creative Agency Website",
+    description:
+      "クリエイティブエージェンシーのコーポレートサイト。ダイナミックなアニメーションと洗練されたタイポグラフィで、ブランドの創造性を表現。",
+    tags: ["Next.js", "Framer Motion", "GSAP", "Figma"],
+    year: "2024",
+    color: "#c96e9b",
+    image: "/works/project-3.jpg",
+  },
+  {
+    id: 4,
+    title: "Zenith Mobile",
+    category: "Mobile Application",
+    description:
+      "瞑想・マインドフルネスアプリのUI/UXデザインとフロントエンド開発。穏やかな配色とスムーズなトランジションで心地よい体験を実現。",
+    tags: ["React Native", "TypeScript", "Firebase"],
+    year: "2024",
+    color: "#6e8bc9",
+    image: "/works/project-4.jpg",
+  },
+  {
+    id: 5,
+    title: "Arch Portfolio",
+    category: "Portfolio Website",
+    description:
+      "建築事務所のポートフォリオサイト。大胆なレイアウトとミニマルなデザインで、建築作品の持つ空間美を画面上に再構築。",
+    tags: ["Astro", "Three.js", "Tailwind CSS"],
+    year: "2024",
+    color: "#c9b86e",
+    image: "/works/project-5.jpg",
+  },
+  {
+    id: 6,
+    title: "NoteFlow",
+    category: "Productivity Tool",
+    description:
+      "Markdownベースのノートアプリ。リアルタイムコラボレーション機能と直感的なエディタで、チームの知識共有を革新。",
+    tags: ["Next.js", "WebSocket", "Tiptap", "Supabase"],
+    year: "2023",
+    color: "#9b6ec9",
+    image: "/works/project-6.jpg",
+  },
+];
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <ScrollReveal delay={index * 0.1} className="group">
+      <motion.article
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="relative overflow-hidden rounded-sm border border-border bg-bg-secondary cursor-pointer"
+      >
+        {/* Image area */}
+        <div className="relative aspect-[16/10] overflow-hidden bg-bg-tertiary">
+          {/* Colored gradient placeholder */}
+          <div
+            className="absolute inset-0 opacity-20 transition-opacity duration-500 group-hover:opacity-40"
+            style={{
+              background: `radial-gradient(ellipse at 30% 50%, ${project.color}40 0%, transparent 70%)`,
+            }}
+          />
+
+          {/* Decorative grid pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <svg width="100%" height="100%" className="text-text-muted">
+              <defs>
+                <pattern id={`grid-${project.id}`} width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill={`url(#grid-${project.id})`} />
+            </svg>
+          </div>
+
+          {/* Project number */}
+          <div className="absolute top-6 left-6 font-display text-7xl font-light text-text-primary/5">
+            {String(project.id).padStart(2, "0")}
+          </div>
+
+          {/* Center icon placeholder */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              animate={isHovered ? { scale: 1.1, rotate: 45 } : { scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-16 h-16 border border-border-light flex items-center justify-center"
+              style={{ borderColor: isHovered ? project.color : undefined }}
+            >
+              <div
+                className="w-2 h-2 rounded-full transition-colors duration-300"
+                style={{ backgroundColor: isHovered ? project.color : "var(--text-muted)" }}
+              />
+            </motion.div>
+          </div>
+
+          {/* Year badge */}
+          <div className="absolute top-6 right-6">
+            <span className="font-body text-xs tracking-wider text-text-muted">{project.year}</span>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <span className="font-body text-xs tracking-widest uppercase text-text-muted block mb-2">
+                {project.category}
+              </span>
+              <h3 className="font-display text-2xl md:text-3xl font-light text-text-primary group-hover:text-accent transition-colors duration-300">
+                {project.title}
+              </h3>
+            </div>
+            <motion.div
+              animate={isHovered ? { x: 0, opacity: 1 } : { x: -10, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="mt-2"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-accent"
+              >
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </motion.div>
+          </div>
+
+          <p className="font-body text-sm leading-relaxed text-text-secondary mb-5">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 font-body text-xs tracking-wider text-text-muted border border-border rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom accent line */}
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              exit={{ scaleX: 0 }}
+              transition={{ duration: 0.4 }}
+              className="absolute bottom-0 left-0 right-0 h-px origin-left"
+              style={{ backgroundColor: project.color }}
+            />
+          )}
+        </AnimatePresence>
+      </motion.article>
+    </ScrollReveal>
+  );
+}
+
+export default function Works() {
+  return (
+    <section id="works" className="relative py-32 md:py-44">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-16">
+        {/* Section label */}
+        <ScrollReveal>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-accent">02</span>
+            <span className="block w-12 h-px bg-accent" />
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-text-muted">
+              Works
+            </span>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-text-primary">
+              Selected <span className="italic text-gradient">Projects</span>
+            </h2>
+            <p className="font-body text-sm text-text-secondary max-w-sm">
+              クライアントワークから個人プロジェクトまで、厳選した制作物をご紹介します。
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Divider */}
+        <ScrollReveal>
+          <div className="divider mb-16" />
+        </ScrollReveal>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
