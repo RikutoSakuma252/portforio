@@ -13,9 +13,23 @@ interface Project {
   year: string;
   color: string;
   image: string;
+  link?: string;
 }
 
 const projects: Project[] = [
+  {
+    id: 0,
+    title: "KOKU Coffee",
+    category: "Café Landing Page",
+    description:
+      "スペシャルティコーヒーショップのランディングページ。Wabi-Sabi Luxuryをテーマに、Playfair Displayと温かみのある配色でブランドの誠実さと品質感を表現。IntersectionObserverによるスクロールアニメーションを実装。",
+    tags: ["HTML", "CSS", "JavaScript"],
+    year: "2025",
+    color: "#8b5e3c",
+    // Production: replace with actual screenshot at /works/koku-coffee-preview.jpg
+    image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80&fit=crop",
+    link: "/works/koku-coffee/index.html",
+  },
   {
     id: 1,
     title: "LUXE Commerce",
@@ -86,6 +100,7 @@ const projects: Project[] = [
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <ScrollReveal delay={index * 0.1} className="group">
@@ -96,49 +111,66 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       >
         {/* Image area */}
         <div className="relative aspect-[16/10] overflow-hidden bg-bg-tertiary">
-          {/* Colored gradient placeholder */}
-          <div
-            className="absolute inset-0 opacity-20 transition-opacity duration-500 group-hover:opacity-40"
-            style={{
-              background: `radial-gradient(ellipse at 30% 50%, ${project.color}40 0%, transparent 70%)`,
-            }}
-          />
-
-          {/* Decorative grid pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%" className="text-text-muted">
-              <defs>
-                <pattern id={`grid-${project.id}`} width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill={`url(#grid-${project.id})`} />
-            </svg>
-          </div>
+          {project.image && !imageError ? (
+            /* Actual preview image */
+            <>
+              <img
+                src={project.image}
+                alt={`${project.title} プレビュー`}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                onError={() => setImageError(true)}
+              />
+              <div
+                className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-60"
+                style={{
+                  background: `linear-gradient(135deg, ${project.color}99 0%, transparent 60%)`,
+                  opacity: 0.3,
+                }}
+              />
+            </>
+          ) : (
+            /* Gradient placeholder for projects without images */
+            <>
+              <div
+                className="absolute inset-0 opacity-20 transition-opacity duration-500 group-hover:opacity-40"
+                style={{
+                  background: `radial-gradient(ellipse at 30% 50%, ${project.color}40 0%, transparent 70%)`,
+                }}
+              />
+              <div className="absolute inset-0 opacity-10">
+                <svg width="100%" height="100%" className="text-text-muted">
+                  <defs>
+                    <pattern id={`grid-${project.id}`} width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill={`url(#grid-${project.id})`} />
+                </svg>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  animate={isHovered ? { scale: 1.1, rotate: 45 } : { scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-16 h-16 border border-border-light flex items-center justify-center"
+                  style={{ borderColor: isHovered ? project.color : undefined }}
+                >
+                  <div
+                    className="w-2 h-2 rounded-full transition-colors duration-300"
+                    style={{ backgroundColor: isHovered ? project.color : "var(--text-muted)" }}
+                  />
+                </motion.div>
+              </div>
+            </>
+          )}
 
           {/* Project number */}
-          <div className="absolute top-6 left-6 font-display text-7xl font-light text-text-primary/5">
+          <div className="absolute top-6 left-6 font-display text-7xl font-light text-white/10 select-none">
             {String(project.id).padStart(2, "0")}
-          </div>
-
-          {/* Center icon placeholder */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              animate={isHovered ? { scale: 1.1, rotate: 45 } : { scale: 1, rotate: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-16 h-16 border border-border-light flex items-center justify-center"
-              style={{ borderColor: isHovered ? project.color : undefined }}
-            >
-              <div
-                className="w-2 h-2 rounded-full transition-colors duration-300"
-                style={{ backgroundColor: isHovered ? project.color : "var(--text-muted)" }}
-              />
-            </motion.div>
           </div>
 
           {/* Year badge */}
           <div className="absolute top-6 right-6">
-            <span className="font-body text-xs tracking-wider text-text-muted">{project.year}</span>
+            <span className="font-body text-xs tracking-wider text-white/60 drop-shadow">{project.year}</span>
           </div>
         </div>
 
@@ -176,15 +208,32 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 font-body text-xs tracking-wider text-text-muted border border-border rounded-full"
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 font-body text-xs tracking-wider text-text-muted border border-border rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex-shrink-0 flex items-center gap-1.5 font-body text-xs tracking-widest uppercase transition-colors duration-200 hover:opacity-80"
+                style={{ color: project.color }}
               >
-                {tag}
-              </span>
-            ))}
+                View
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </a>
+            )}
           </div>
         </div>
 

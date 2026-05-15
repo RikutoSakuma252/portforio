@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOKU Coffee | スペシャルティコーヒー 下北沢</title>
+  <meta name="description" content="KOKU Coffeeは東京・下北沢のスペシャルティコーヒーショップ。世界の農園から厳選した豆を、一杯ずつ丁寧にお届けします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Global grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ==================== Navigation ==================== -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo" aria-label="KOKU Coffee トップへ">
+      KOKU<span>Coffee</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#access">Access</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero" id="hero" aria-label="ヒーローセクション">
+    <div class="hero-image-wrap">
+      <!-- Hero image: Unsplash specialty coffee shop interior -->
+      <!-- Production: download from Unsplash and place at /public/images/hero-coffee-shop.jpg -->
+      <img
+        src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=85&fit=crop&crop=center"
+        alt="KOKU Coffee 店内 — 温かみのある照明とウッドインテリア"
+        class="hero-image"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Specialty Coffee &nbsp;·&nbsp; 東京 下北沢</p>
+      <h1 class="hero-title">
+        <span class="hero-title-line">一杯に、</span>
+        <em class="hero-title-em">物語を。</em>
+      </h1>
+      <p class="hero-sub">こだわりの豆から、あなただけの一杯を。</p>
+      <a href="#menu" class="hero-cta">
+        メニューを見る
+        <span class="hero-cta-arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+
+    <!-- Decorative oversize wordmark -->
+    <div class="hero-deco" aria-hidden="true">KOKU</div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== About ==================== -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-label reveal">About</p>
+        <h2 class="section-title reveal" id="about-heading">
+          コーヒーと、<br><em>出会う場所。</em>
+        </h2>
+        <blockquote class="about-quote reveal">
+          「豆の声を聞き、<br>一杯に誠実であること。」
+        </blockquote>
+        <p class="about-body reveal">
+          KOKU Coffeeは、2019年に東京・下北沢で誕生したスペシャルティコーヒーショップです。
+        </p>
+        <p class="about-body reveal reveal-delay-1">
+          世界各地の農園から厳選した豆を、その豆の個性が最大限に引き出されるよう丁寧に焙煎しています。一杯のコーヒーを通じて、産地の風景や農家の想いをお届けします。
+        </p>
+        <div class="about-since reveal reveal-delay-2">
+          <span class="since-year">2019</span>
+          <span class="since-label">年 東京創業</span>
+        </div>
+      </div>
+
+      <div class="about-image-wrap reveal">
+        <!-- About image: Coffee beans -->
+        <!-- Production: download from Unsplash and place at /public/images/about-coffee-beans.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80&fit=crop"
+          alt="世界各地から厳選したコーヒー豆"
+          class="about-image"
+          loading="lazy"
+        >
+        <div class="about-image-frame" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Menu ==================== -->
+  <section class="menu-section" id="menu" aria-labelledby="menu-heading">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <p class="section-label reveal">Menu</p>
+        <h2 class="section-title reveal" id="menu-heading">
+          おすすめの<em>一杯</em>
+        </h2>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card reveal">
+          <div class="menu-card-image-wrap">
+            <!-- Espresso image -->
+            <!-- Production: /public/images/menu-espresso.jpg -->
+            <img
+              src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&q=80&fit=crop"
+              alt="エスプレッソ"
+              class="menu-card-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Espresso</h3>
+            <p class="menu-card-desc">凝縮されたコーヒーの精髄。苦味の中に甘みと複雑さが宿る、一口の小宇宙。</p>
+            <p class="menu-card-price">¥ 480</p>
+          </div>
+        </article>
+
+        <article class="menu-card reveal reveal-delay-1">
+          <div class="menu-card-image-wrap">
+            <!-- Cafe Latte image -->
+            <!-- Production: /public/images/menu-cafe-latte.jpg -->
+            <img
+              src="https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&q=80&fit=crop"
+              alt="カフェラテ"
+              class="menu-card-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Café Latte</h3>
+            <p class="menu-card-desc">なめらかなスチームミルクがエスプレッソと溶け合う、やさしく温かな一杯。</p>
+            <p class="menu-card-price">¥ 580</p>
+          </div>
+        </article>
+
+        <article class="menu-card reveal reveal-delay-2">
+          <div class="menu-card-image-wrap">
+            <!-- Hand drip image -->
+            <!-- Production: /public/images/menu-hand-drip.jpg -->
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&fit=crop"
+              alt="ハンドドリップコーヒー"
+              class="menu-card-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Hand Drip</h3>
+            <p class="menu-card-desc">バリスタが一杯ずつ丁寧にドリップ。豆の個性をじっくりと引き出した繊細な味わい。</p>
+            <p class="menu-card-price">¥ 620</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-card--special reveal reveal-delay-3">
+          <div class="menu-card-image-wrap">
+            <!-- Specialty image -->
+            <!-- Production: /public/images/menu-specialty.jpg -->
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&fit=crop"
+              alt="本日のスペシャルティ"
+              class="menu-card-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-badge">Today's Special</span>
+            <h3 class="menu-card-name">Specialty of the Day</h3>
+            <p class="menu-card-desc">農園直輸入のシングルオリジン。その日入荷した最良の豆を、最良の方法でお届けします。</p>
+            <p class="menu-card-price">¥ 780</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Story ==================== -->
+  <section class="story" id="story" aria-labelledby="story-heading">
+    <div class="story-inner">
+      <div class="story-header">
+        <p class="section-label reveal">Our Story</p>
+        <h2 class="section-title reveal" id="story-heading">
+          コーヒーへの<em>こだわり</em>
+        </h2>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-item reveal">
+          <span class="story-num" aria-hidden="true">01</span>
+          <h3 class="story-item-title">産地へのこだわり</h3>
+          <p class="story-item-text">
+            農園直輸入のシングルオリジン豆にこだわります。エチオピア、グアテマラ、パナマ——それぞれの土地が育んだ風味を、そのままお届けします。
+          </p>
+        </div>
+        <div class="story-item reveal reveal-delay-1">
+          <span class="story-num" aria-hidden="true">02</span>
+          <h3 class="story-item-title">焙煎へのこだわり</h3>
+          <p class="story-item-text">
+            店内で自家焙煎。少量ずつ、丁寧に。豆の状態を見ながら焙煎度合いを調整し、常に最高の状態でご提供します。
+          </p>
+        </div>
+        <div class="story-item reveal reveal-delay-2">
+          <span class="story-num" aria-hidden="true">03</span>
+          <h3 class="story-item-title">抽出へのこだわり</h3>
+          <p class="story-item-text">
+            バリスタが一杯ずつ丁寧に抽出します。温度、時間、流量——すべてを意識し、豆の持つ最大限の魅力を引き出します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Gallery ==================== -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-heading">
+    <div class="gallery-header">
+      <p class="section-label reveal">Gallery</p>
+      <h2 class="section-title reveal" id="gallery-heading">
+        <em>空間</em>と時間
+      </h2>
+    </div>
+
+    <div class="gallery-grid" role="list">
+      <figure class="gallery-item reveal" role="listitem">
+        <!-- Production: /public/images/gallery-morning-light.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80&fit=crop"
+          alt="朝の光が差し込むカフェ空間"
+          class="gallery-img"
+          loading="lazy"
+        >
+        <figcaption class="gallery-caption">Morning Light</figcaption>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem">
+        <!-- Production: /public/images/gallery-perfect-cup.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&q=80&fit=crop"
+          alt="丁寧に淹れられたコーヒーカップ"
+          class="gallery-img"
+          loading="lazy"
+        >
+        <figcaption class="gallery-caption">Perfect Cup</figcaption>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem">
+        <!-- Production: /public/images/gallery-craft.jpg -->
+        <img
+          src="https://images.pexels.com/photos/4349796/pexels-photo-4349796.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="コーヒーを抽出するバリスタの手元"
+          class="gallery-img"
+          loading="lazy"
+        >
+        <figcaption class="gallery-caption">Craft</figcaption>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem">
+        <!-- Production: /public/images/gallery-origin.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1525193612562-0ec53b0e5d7c?w=800&q=80&fit=crop"
+          alt="産地から届いたコーヒー生豆"
+          class="gallery-img"
+          loading="lazy"
+        >
+        <figcaption class="gallery-caption">Origin</figcaption>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem">
+        <!-- Production: /public/images/gallery-quiet-moments.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1515283709260-ee29296f1534?w=800&q=80&fit=crop"
+          alt="静かなカフェの窓際席"
+          class="gallery-img"
+          loading="lazy"
+        >
+        <figcaption class="gallery-caption">Quiet Moments</figcaption>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-3" role="listitem">
+        <!-- Production: /public/images/gallery-pairing.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=800&q=80&fit=crop"
+          alt="コーヒーとスイーツのペアリング"
+          class="gallery-img"
+          loading="lazy"
+        >
+        <figcaption class="gallery-caption">Pairing</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================== Access ==================== -->
+  <section class="access" id="access" aria-labelledby="access-heading">
+    <div class="access-inner">
+      <div class="access-info">
+        <p class="section-label reveal">Access</p>
+        <h2 class="section-title reveal" id="access-heading">
+          お越しの<em>際は</em>
+        </h2>
+
+        <dl class="access-details reveal">
+          <div class="access-item">
+            <dt>住所</dt>
+            <dd>東京都世田谷区下北沢X-X-X</dd>
+          </div>
+          <div class="access-item">
+            <dt>営業時間</dt>
+            <dd>10:00 &mdash; 20:00</dd>
+          </div>
+          <div class="access-item">
+            <dt>定休日</dt>
+            <dd>月曜日</dd>
+          </div>
+          <div class="access-item">
+            <dt>最寄り駅</dt>
+            <dd>小田急線・京王井の頭線「下北沢駅」徒歩5分</dd>
+          </div>
+          <div class="access-item">
+            <dt>電話</dt>
+            <dd>[placeholder]</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="access-map reveal reveal-delay-1">
+        <!-- Google Maps embed: Shimokitazawa area (dummy coordinates) -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.327!2d139.6657!3d35.6614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f34d8c00a011%3A0x4b02c7fe000000!2z5LiL5YyX5rKi!5e0!3m2!1sja!2sjp!4v1"
+          width="100%"
+          height="460"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="KOKU Coffee アクセスマップ — 東京都世田谷区下北沢"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo" aria-label="KOKU Coffee">
+        KOKU<span>Coffee</span>
+      </p>
+      <p class="footer-tagline">一杯に、物語を。</p>
+      <p class="footer-address">東京都世田谷区下北沢 &nbsp;·&nbsp; 10:00–20:00 &nbsp;·&nbsp; 月曜定休</p>
+
+      <nav class="footer-sns" aria-label="SNSリンク">
+        <a href="#" class="sns-link" aria-label="Instagram（準備中）">Instagram</a>
+        <span class="sns-divider" aria-hidden="true">/</span>
+        <a href="#" class="sns-link" aria-label="Twitter（準備中）">Twitter</a>
+      </nav>
+
+      <p class="footer-copy">
+        <small>&copy; 2024 KOKU Coffee. All rights reserved.</small>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
