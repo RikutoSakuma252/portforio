@@ -1,0 +1,56 @@
+---
+const wines = [
+  { region: 'Puglia', name: 'Primitivo di Manduria', note: '濃厚でスパイシー。ラムのロースト料理に最適。', vintage: '2020' },
+  { region: 'Toscana', name: 'Brunello di Montalcino', note: '複雑な香りとエレガントなタンニン。長期熟成の逸品。', vintage: '2018' },
+  { region: 'Piemonte', name: 'Barolo DOCG', note: '「ワインの王様」。パスタからメインまで幅広く。', vintage: '2019' },
+  { region: 'Sicilia',  name: 'Etna Rosso DOC',       note: 'エトナ火山の火山岩土壌で育つ、ミネラル豊富な一本。', vintage: '2021' },
+  { region: 'Veneto',   name: 'Amarone della Valpolicella', note: '凝縮感のある深みある赤。チーズや肉料理に。', vintage: '2017' },
+];
+---
+
+<section id="wine" class="py-24 md:py-36 bg-surface" aria-labelledby="wine-heading">
+  <div class="max-w-5xl mx-auto px-6 md:px-12">
+
+    <div class="text-center mb-16">
+      <p class="font-sub text-[0.6rem] tracking-cinzel uppercase text-gold mb-4 reveal">
+        ✦ Wine Cellar ✦
+      </p>
+      <h2 id="wine-heading" class="font-display text-[clamp(1.8rem,3.5vw,3rem)] italic text-cream reveal reveal-delay-1">
+        イタリアのテロワールを、グラスの中に。
+      </h2>
+      <p class="font-body text-[0.85rem] text-muted mt-4 reveal reveal-delay-2">
+        400本を超えるイタリアワインをセレクト。<br>
+        ソムリエがお料理に合わせた最良の一本をご提案します。
+      </p>
+    </div>
+
+    <!-- Wine list -->
+    <ul class="space-y-0 reveal reveal-delay-2" role="list">
+      {wines.map((wine, i) => (
+        <li class="flex items-start gap-6 md:gap-10 py-6 border-b border-gold/10 group hover:border-gold/30 transition-colors duration-300">
+          <!-- Region -->
+          <div class="flex-shrink-0 w-24 text-right hidden md:block">
+            <span class="font-sub text-[0.5rem] tracking-cinzel uppercase text-gold/60">{wine.region}</span>
+          </div>
+          <!-- Divider dot -->
+          <span class="flex-shrink-0 w-px self-stretch bg-gold/15 group-hover:bg-gold/40 transition-colors duration-300 hidden md:block" aria-hidden="true"></span>
+          <!-- Content -->
+          <div class="flex-1 min-w-0">
+            <div class="flex items-baseline justify-between gap-4 mb-1">
+              <h3 class="font-display italic text-[1rem] md:text-[1.1rem] text-cream group-hover:text-gold-light transition-colors duration-300">
+                {wine.name}
+              </h3>
+              <span class="font-sub text-[0.5rem] tracking-wider text-muted flex-shrink-0">{wine.vintage}</span>
+            </div>
+            <p class="font-body text-[0.78rem] text-muted/70 leading-relaxed">{wine.note}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Sommelier note -->
+    <p class="font-body text-[0.75rem] text-muted/50 text-center mt-10 reveal reveal-delay-3">
+      ワインペアリングのご相談もお気軽に。ソムリエ: [placeholder]
+    </p>
+  </div>
+</section>

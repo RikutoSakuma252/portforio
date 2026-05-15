@@ -1,0 +1,108 @@
+---
+---
+<section
+  class="relative h-svh min-h-[640px] flex flex-col items-center justify-center overflow-hidden"
+  id="hero"
+  aria-label="ヒーロー"
+>
+  <!-- Background image -->
+  <!-- Production: download from Pexels ID 941861 and save to /public/images/hero-restaurant.jpg -->
+  <img
+    src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1920"
+    alt="OSTERIA NODO 店内 — 落ち着いた照明と洗練されたテーブルセッティング"
+    class="absolute inset-0 w-full h-full object-cover scale-[1.04] animate-[heroReveal_2.5s_cubic-bezier(0.16,1,0.3,1)_forwards]"
+    fetchpriority="high"
+  />
+
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/50 to-bg/80"></div>
+
+  <!-- Gold candle-flicker vignette -->
+  <div
+    class="absolute inset-0 animate-flicker"
+    style="background: radial-gradient(ellipse 70% 70% at 50% 60%, rgba(201,168,76,0.08) 0%, transparent 70%);"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-6">
+    <!-- Eyebrow -->
+    <p
+      class="font-sub text-[0.6rem] tracking-cinzel uppercase text-gold mb-6 opacity-0"
+      style="animation: fadeUp 0.8s 0.4s cubic-bezier(0.16,1,0.3,1) forwards;"
+    >
+      Ristorante &nbsp;·&nbsp; 東京
+    </p>
+
+    <!-- Logo mark -->
+    <div
+      class="mb-2 opacity-0"
+      style="animation: fadeUp 0.9s 0.55s cubic-bezier(0.16,1,0.3,1) forwards;"
+    >
+      <span class="font-sub text-[0.7rem] tracking-[0.6em] uppercase text-cream/60">OSTERIA</span>
+    </div>
+    <h1
+      class="font-display font-bold italic text-[clamp(5rem,18vw,16rem)] leading-none text-cream opacity-0 select-none"
+      style="animation: fadeUp 1s 0.7s cubic-bezier(0.16,1,0.3,1) forwards; text-shadow: 0 0 80px rgba(201,168,76,0.25);"
+      aria-label="OSTERIA NODO"
+    >
+      NODO
+    </h1>
+
+    <!-- Ornament -->
+    <div
+      class="ornament max-w-xs mx-auto my-6 opacity-0"
+      style="animation: fadeUp 0.8s 0.9s cubic-bezier(0.16,1,0.3,1) forwards;"
+      aria-hidden="true"
+    >
+      <span class="font-sub text-gold text-[0.5rem] tracking-widest">✦</span>
+    </div>
+
+    <!-- Tagline -->
+    <p
+      class="font-display italic text-[clamp(1.1rem,2.5vw,1.8rem)] text-cream/90 mb-3 opacity-0"
+      style="animation: fadeUp 0.8s 1.05s cubic-bezier(0.16,1,0.3,1) forwards;"
+    >
+      素材の声を、皿の上で。
+    </p>
+    <p
+      class="font-body text-[0.85rem] text-muted tracking-wide mb-10 opacity-0"
+      style="animation: fadeUp 0.8s 1.2s cubic-bezier(0.16,1,0.3,1) forwards;"
+    >
+      南イタリアの伝統と、日本の旬が出会う場所。
+    </p>
+
+    <!-- CTA -->
+    <a
+      href="#reserve"
+      class="inline-flex items-center gap-3 font-sub text-[0.65rem] tracking-cinzel uppercase px-8 py-3.5 border border-gold text-gold hover:bg-gold hover:text-bg transition-all duration-400 opacity-0"
+      style="animation: fadeUp 0.8s 1.35s cubic-bezier(0.16,1,0.3,1) forwards;"
+    >
+      ご予約はこちら
+    </a>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0"
+    style="animation: fadeUp 1s 2s ease forwards;"
+    aria-hidden="true"
+  >
+    <span class="font-sub text-[0.5rem] tracking-cinzel uppercase text-muted">Scroll</span>
+    <div class="w-px h-12 bg-gradient-to-b from-gold/60 to-transparent" style="animation: scrollLine 2s 2s ease-in-out infinite;"></div>
+  </div>
+</section>
+
+<style>
+  @keyframes heroReveal {
+    to { transform: scale(1); }
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollLine {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    60%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+  }
+</style>

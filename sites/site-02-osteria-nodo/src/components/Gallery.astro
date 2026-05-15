@@ -1,0 +1,80 @@
+---
+const dishes = [
+  {
+    src: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: '季節の前菜 — 繊細な盛り付けで素材の色彩を表現',
+    name: 'Antipasto della Stagione',
+    span: 'row-span-2',
+  },
+  {
+    src: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: '手打ちパスタ — プーリア産小麦を使った自家製オレキエッテ',
+    name: 'Orecchiette Artigianale',
+    span: '',
+  },
+  {
+    src: 'https://images.pexels.com/photos/784633/pexels-photo-784633.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'タリアテッレ — 国産トリュフと共に',
+    name: 'Tagliatelle al Tartufo',
+    span: '',
+  },
+  {
+    src: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'メイン魚料理 — 本日の鮮魚を薪火で',
+    name: 'Pesce alla Griglia',
+    span: '',
+  },
+  {
+    src: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'ワインペアリング — 厳選イタリアンワイン',
+    name: 'Abbinamento Vini',
+    span: '',
+  },
+  {
+    src: 'https://images.pexels.com/photos/3026806/pexels-photo-3026806.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'デザート — ティラミスの再解釈',
+    name: 'Tiramisù Reinterpretato',
+    span: 'row-span-2',
+  },
+];
+---
+
+<section id="gallery" class="py-24 md:py-36 bg-bg" aria-labelledby="gallery-heading">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 mb-12">
+    <p class="font-sub text-[0.6rem] tracking-cinzel uppercase text-gold mb-4 reveal flex items-center gap-3">
+      <span class="w-6 h-px bg-gold"></span>Dish Gallery
+    </p>
+    <h2 id="gallery-heading" class="font-display text-[clamp(1.8rem,3.5vw,3rem)] italic text-cream reveal reveal-delay-1">
+      一皿に宿る、<em class="not-italic text-gold">物語。</em>
+    </h2>
+  </div>
+
+  <!-- Asymmetric grid -->
+  <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-3 grid-rows-[auto] gap-2 auto-rows-[220px]">
+    {dishes.map((dish, i) => (
+      <figure
+        class={`relative overflow-hidden group cursor-default reveal ${dish.span} ${i > 2 ? 'reveal-delay-1' : ''}`}
+        aria-label={dish.name}
+      >
+        <img
+          src={dish.src}
+          alt={dish.alt}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-107"
+          loading="lazy"
+        />
+        <!-- Hover overlay -->
+        <figcaption class="absolute inset-0 bg-bg/75 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4 text-center">
+          <span class="font-sub text-[0.45rem] tracking-cinzel uppercase text-gold mb-2">✦</span>
+          <span class="font-display italic text-sm md:text-base text-cream">{dish.name}</span>
+        </figcaption>
+        <!-- Permanent gold corner -->
+        <div class="absolute top-0 left-0 w-6 h-px bg-gold/40 pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-px h-6 bg-gold/40 pointer-events-none"></div>
+      </figure>
+    ))}
+  </div>
+</section>
+
+<style>
+  .scale-107 { transform: scale(1.07); }
+</style>

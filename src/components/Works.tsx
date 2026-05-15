@@ -32,6 +32,19 @@ const projects: Project[] = [
   },
   {
     id: 1,
+    title: "OSTERIA NODO",
+    category: "Restaurant Landing Page",
+    description:
+      "イタリアンレストランのランディングページ。Cinematic Fine Diningをテーマにダークエメラルド×ゴールドで高級感を演出。Astro の Island Architecture でメニュータブのみ React 化し、静的配信とインタラクティブを両立。",
+    tags: ["Astro", "Tailwind CSS", "React"],
+    year: "2025",
+    color: "#c9a84c",
+    // Production: replace with actual screenshot at /works/osteria-nodo-preview.jpg
+    image: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800",
+    link: "/works/osteria-nodo/index.html",
+  },
+  {
+    id: 2,
     title: "LUXE Commerce",
     category: "E-Commerce Platform",
     description:
