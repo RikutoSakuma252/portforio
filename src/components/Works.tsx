@@ -40,7 +40,7 @@ const projects: Project[] = [
     year: "2025",
     color: "#c9a84c",
     image: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800",
-    link: "#",
+    link: "/works/osteria-nodo/index.html",
   },
   {
     id: 2,
