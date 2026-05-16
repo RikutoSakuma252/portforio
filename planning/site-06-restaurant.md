@@ -6,8 +6,8 @@
 |------|------|
 | サイト名 | OSTERIA NODO（オステリア ノード） |
 | 業種 | イタリアンレストラン LP |
-| 技術スタック | Astro + Tailwind CSS |
-| 制作意図 | Astro の静的サイト生成・Island Architecture・パフォーマンスを示す |
+| 技術スタック | React + Tailwind CSS (Vite) |
+| 制作意図 | React コンポーネント設計・Tailwind CSS によるデザインシステム・インタラクティブUIを示す |
 | カラーコンセプト | ダークグリーン・クリームホワイト・ゴールド |
 
 ## コンセプト
@@ -101,20 +101,20 @@
 ### 10. Footer
 - ロゴ・コピーライト・SNS（Instagram / [placeholder]）
 
-## Astro 設計方針
+## React 設計方針
 
-- Astro + Tailwind CSS（`@astrojs/tailwind`）
-- `.astro` コンポーネントでセクション分割
-- タブ切り替え（Menu）のみ React Island として組み込み（`client:load`）
-- `<Image>` コンポーネントで画像最適化（`@astrojs/image`）
+- React + Tailwind CSS（Vite でセットアップ）
+- コンポーネントごとにファイル分割（`src/components/`）
+- タブ切り替え（Menu）は `useState` で管理
+- 画像は `public/` に配置し最適化は手動（または `vite-imagetools`）
 - デプロイ: Vercel or Netlify（Static）
 
 ## アニメーション方針
 
-- Astro の特性を活かし、基本は CSS アニメーション
-- スクロール連動: CSS `@keyframes` + `IntersectionObserver`（Vanilla JS）
-- Hero: テキストのフェードアップ（CSS animation）
-- Gallery: ホバーでオーバーレイ表示（CSS transition）
+- 基本は Tailwind CSS の `transition` / `duration` クラス
+- スクロール連動: `IntersectionObserver` + カスタムフック (`useInView`)
+- Hero: テキストのフェードアップ（CSS animation + Tailwind）
+- Gallery: ホバーでオーバーレイ表示（Tailwind `group` / `group-hover`）
 - スライダー: Swiper.js を使用
 
 ## Unsplash 検索キーワード（画像取得用）
