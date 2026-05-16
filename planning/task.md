@@ -61,3 +61,55 @@
 - `image`: スクリーンショットを撮影して `/public/works/` に配置
 - `tags`: 実際に使用した技術を記載
 - `description`: 制作意図・工夫した点を日本語で記載
+
+---
+
+## Works 埋め込み手順（実装完了後に必ず実施）
+
+サイトの実装が完了したら、以下の手順を **自動的に** 実施してユーザーに確認を促すこと。
+
+### 1. 静的ビルド
+
+技術スタックに応じてビルドコマンドを実行する。
+
+| スタック | ビルドコマンド | 出力先 |
+|---------|--------------|-------|
+| Vite (React) | `npm run build` | `dist/` |
+| Nuxt.js | `NUXT_APP_BASE_URL=/works/{slug}/ npm run generate` | `.output/public/` |
+| HTML/CSS/JS | ビルド不要 | ソースをそのまま使用 |
+
+### 2. public へコピー
+
+```
+# Vite の場合
+cp -r dist/ ../../public/works/{slug}/
+
+# Nuxt の場合
+cp -r .output/public/ ../../public/works/{slug}/
+```
+
+スラッグ命名規則: `site-01-koku-coffee` → `koku-coffee` のようにサイト名のケバブケース
+
+### 3. Works.tsx に追加
+
+`/src/components/Works.tsx` の `projects` 配列に以下を追加する。
+
+```ts
+{
+  id: N,                          // 連番
+  title: "サイト名",
+  category: "業種 Landing Page",
+  description: "制作意図・工夫した点を日本語で記載",
+  tags: ["使用技術1", "使用技術2"],
+  year: "2025",
+  color: "#xxxxxx",               // サイトのアクセントカラー
+  image: "Pexels/Unsplash の URL または /works/{slug}/screenshot.jpg",
+  link: "/works/{slug}/index.html",
+}
+```
+
+### 4. 動作確認・ユーザーへ報告
+
+上記完了後、ユーザーに以下を伝えてブラウザ確認を促す。
+
+> 「Works セクションへの埋め込みが完了しました。ブラウザで確認してください。」
