@@ -32,6 +32,18 @@ const projects: Project[] = [
   },
   {
     id: 1,
+    title: "atelier BLANC",
+    category: "Hair Salon Landing Page",
+    description:
+      "プライベートヘアサロンのランディングページ。静かな日本的ミニマリズムをテーマに Cormorant Garamond のエレガントなタイポグラフィと余白で上品さを表現。Nuxt.js (Vue 3) + Tailwind CSS で SSG 構成。",
+    tags: ["Nuxt.js", "Vue 3", "Tailwind CSS"],
+    year: "2025",
+    color: "#b8a99a",
+    image: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800",
+    link: "/works/atelier-blanc/index.html",
+  },
+  {
+    id: 3,
     title: "OSTERIA NODO",
     category: "Restaurant Landing Page",
     description:
