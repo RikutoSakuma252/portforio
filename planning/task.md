@@ -38,7 +38,7 @@
 | 2 | OSTERIA NODO | レストラン LP | React + Tailwind CSS (Vite) | site-06-restaurant.md | 完了 |
 | 3 | atelier BLANC | ヘアサロン LP | Nuxt.js (Vue 3) | site-02-salon.md | 完了 |
 | 4 | APEX GYM | パーソナルジム LP | React + Tailwind CSS | site-03-gym.md | 完了 |
-| 5 | HORIZON不動産 | 不動産 コーポレート | Next.js | site-04-realestate.md | 未着手 |
+| 5 | HORIZON不動産 | 不動産 コーポレート | Next.js | site-04-realestate.md | 完了 |
 | 6 | Flowly | SaaS LP | Next.js + TypeScript | site-05-saas.md | 未着手 |
 
 > 制作完了したら「状態」を `完了` に更新する

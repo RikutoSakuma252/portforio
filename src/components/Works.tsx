@@ -67,6 +67,18 @@ const projects: Project[] = [
     link: "/works/osteria-nodo/index.html",
   },
   {
+    id: 4,
+    title: "HORIZON不動産",
+    category: "Real Estate Corporate Site",
+    description:
+      "地域密着型不動産会社のコーポレートサイト。Next.js App Router で5ページ構成（トップ・物件一覧・物件詳細・会社概要・お問い合わせ）を SSG で実装。物件フィルター・画像スライダー・ScrollReveal アニメーションを搭載。",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    year: "2025",
+    color: "#c5a55a",
+    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80&fit=crop",
+    link: "/works/horizon-realestate/index.html",
+  },
+  {
     id: 2,
     title: "LUXE Commerce",
     category: "E-Commerce Platform",

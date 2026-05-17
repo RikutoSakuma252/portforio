@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #faf9f6;
+    color: #333333;
+    font-family: 'Noto Sans JP', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #f4f6fb; }
+  ::-webkit-scrollbar-thumb { background: #c5a55a; border-radius: 2px; }
+}
+
+@layer utilities {
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero animations */
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-1 { animation: heroIn 0.9s ease forwards; }
+  .hero-2 { animation: heroIn 0.9s 0.15s ease both; }
+  .hero-3 { animation: heroIn 0.9s 0.3s ease both; }
+  .hero-4 { animation: heroIn 0.9s 0.5s ease both; }
+
+  /* Gold line decoration */
+  .gold-line::before {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 1px;
+    background-color: #c5a55a;
+    margin-bottom: 1rem;
+  }
+}
