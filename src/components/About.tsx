@@ -38,7 +38,7 @@ export default function About() {
           </div>
 
           {/* Right: Details */}
-          <div className="lg:col-span-5 flex flex-col gap-12">
+          <div className="lg:col-span-5 flex flex-col gap-8">
             <ScrollReveal delay={0.3}>
               <div className="border-l border-border-light pl-6">
                 <h3 className="font-display text-xl font-light text-accent mb-3">Philosophy</h3>

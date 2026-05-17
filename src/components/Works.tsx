@@ -97,11 +97,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <ScrollReveal delay={index * 0.1} className="group">
+    <ScrollReveal delay={index * 0.1} className="group h-full">
       <motion.article
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative overflow-hidden rounded-sm border border-border bg-bg-secondary cursor-pointer"
+        className="relative overflow-hidden rounded-sm border border-border bg-bg-secondary cursor-pointer h-full flex flex-col"
       >
         {/* Image area */}
         <div className="relative aspect-[16/10] overflow-hidden bg-bg-tertiary">
@@ -169,7 +169,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 flex flex-col flex-1">
           <div className="flex items-start justify-between gap-4 mb-3">
             <div>
               <span className="font-body text-xs tracking-widest uppercase text-text-muted block mb-2">
@@ -202,7 +202,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.description}
           </p>
 
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-4 mt-auto">
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
@@ -251,7 +251,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default function Works() {
   return (
-    <section id="works" className="relative py-32 md:py-44">
+    <section id="works" className="relative py-32 md:py-20">
       <div className="max-w-[1200px] mx-auto px-6 md:px-16">
         {/* Section label */}
         <ScrollReveal>

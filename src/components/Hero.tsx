@@ -51,7 +51,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Main heading */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden pb-6">
             <motion.h1
               initial={{ y: 120 }}
               animate={{ y: 0 }}
