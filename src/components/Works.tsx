@@ -79,6 +79,18 @@ const projects: Project[] = [
     link: "/works/horizon-realestate/index.html",
   },
   {
+    id: 5,
+    title: "Flowly",
+    category: "SaaS Landing Page",
+    description:
+      "業務フロー管理SaaS のランディングページ。Next.js + TypeScript + Framer Motion で実装。タブ切り替え機能紹介・月払い/年払いトグル付き料金プラン・FAQアコーディオン・ダッシュボードモックアップUIを搭載。",
+    tags: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
+    year: "2025",
+    color: "#4f46e5",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&fit=crop",
+    link: "/works/flowly/index.html",
+  },
+  {
     id: 2,
     title: "LUXE Commerce",
     category: "E-Commerce Platform",
