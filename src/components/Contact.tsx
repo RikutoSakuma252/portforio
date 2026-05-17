@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 md:py-44">
+    <section id="contact" className="relative py-32 md:py-20">
       <div className="max-w-[1200px] mx-auto px-6 md:px-16">
         {/* Section label */}
         <ScrollReveal>

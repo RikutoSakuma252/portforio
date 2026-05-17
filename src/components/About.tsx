@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 md:py-44">
+    <section id="about" className="relative py-32 md:py-20">
       <div className="max-w-[1200px] mx-auto px-6 md:px-16">
         {/* Section label */}
         <ScrollReveal>

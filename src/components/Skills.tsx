@@ -46,7 +46,7 @@ function SkillBar({ skill, index }: { skill: string; index: number }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-32 md:py-44 bg-bg-secondary/50">
+    <section id="skills" className="relative py-32 md:py-20 bg-bg-secondary/50">
       <div className="max-w-[1200px] mx-auto px-6 md:px-16">
         {/* Section label */}
         <ScrollReveal>
