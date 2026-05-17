@@ -43,6 +43,18 @@ const projects: Project[] = [
     link: "/works/atelier-blanc/index.html",
   },
   {
+    id: 2,
+    title: "APEX GYM",
+    category: "Personal Gym Landing Page",
+    description:
+      "パーソナルトレーニングジムのランディングページ。Military-Grade Editorialをテーマにマットブラック×レッドで力強さと高級感を表現。React + Tailwind CSS で数字カウントアップ・マーキーテープ・セクション別スクロールアニメーションを実装。",
+    tags: ["React", "Tailwind CSS", "Vite"],
+    year: "2025",
+    color: "#e63329",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&fit=crop",
+    link: "/works/apex-gym/index.html",
+  },
+  {
     id: 3,
     title: "OSTERIA NODO",
     category: "Restaurant Landing Page",
